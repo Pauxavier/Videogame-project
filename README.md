@@ -55,7 +55,7 @@ The ball is defined with a radius of 20 pixels and red color. It starts at the c
     platform_width = 20
     platform_height = 100
     platform_color = "blue"
-    platform_x = 50  # Distance from the left wall
+    platform_x = 50  
     platform_y = canvas_height // 2 - platform_height // 2
     platform_speed = 30
 
