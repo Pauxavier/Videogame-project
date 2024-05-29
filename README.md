@@ -93,7 +93,7 @@ The ball and platform are drawn on the canvas using the defined properties.
 
 The **move_ball** function updates the ball's position based on its velocity. It checks for collisions with the walls and reverses the ball's direction if a collision occurs. The ball's new position is updated on the canvas, and the function is called again after 30 milliseconds.
 
-###Platform Movement Functions
+### Platform Movement Functions
 
     def move_platform_up(event):
     global platform_y
