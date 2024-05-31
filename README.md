@@ -55,7 +55,7 @@ The ball is defined with a radius of 20 pixels and red color. It starts at the c
     platform_width = 20
     platform_height = 100
     platform_color = "blue"
-    platform_x = 50  
+    platform_x = 50  # Distance from the left wall
     platform_y = canvas_height // 2 - platform_height // 2
     platform_speed = 30
 
@@ -72,6 +72,15 @@ The platform is defined with a width of 20 pixels, height of 100 pixels, and blu
                                    fill=platform_color)
 
 The ball and platform are drawn on the canvas using the defined properties.
+
+### Score Counter
+
+    score = 0
+
+    score_label = tk.Label(root, text=f"FCB:4 RMA: {score}", fg="black", bg="white", font=("Helvetica", 16))
+    score_label.pack()
+
+A score counter is initialized and displayed on the window, showing the current score.
 
 ### Ball Movement Function
 
@@ -91,7 +100,7 @@ The ball and platform are drawn on the canvas using the defined properties.
 
     root.after(30, move_ball)
 
-The **move_ball** function updates the ball's position based on its velocity. It checks for collisions with the walls and reverses the ball's direction if a collision occurs. The ball's new position is updated on the canvas, and the function is called again after 30 milliseconds.
+The **move_ball** function updates the ball's position based on its velocity. It checks for collisions with the walls and reverses the ball's direction if a collision occurs. If the ball hits the left wall, it resets to the starting position, increases the score, and updates the score display. The ball's new position is updated on the canvas, and the function is called again after 30 milliseconds.
 
 ### Platform Movement Functions
 
@@ -124,4 +133,3 @@ The up and down arrow keys are bound to the **move_platform_up** and **move_plat
     root.mainloop()
 
 The **move_ball** function is called to start the ball's movement, and **root.mainloop()** starts the Tkinter main loop to run the game.
-
