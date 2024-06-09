@@ -82,6 +82,15 @@ The ball and platform are drawn on the canvas using the defined properties.
 
 A score counter is initialized and displayed on the window, showing the current score.
 
+### Increment Velocity Function
+
+    def increment_velocity():
+        global ball_vel
+        ball_vel[0] *= 1.3
+        ball_vel[1] *= 1.3
+
+The **increment_velocity** function increases the ball's velocity by 30% each time it is called.
+
 ### Ball Movement Function
 
     def move_ball():
@@ -100,7 +109,7 @@ A score counter is initialized and displayed on the window, showing the current 
 
     root.after(30, move_ball)
 
-The **move_ball** function updates the ball's position based on its velocity. It checks for collisions with the walls and reverses the ball's direction if a collision occurs. If the ball hits the left wall, it resets to the starting position, increases the score, and updates the score display. The ball's new position is updated on the canvas, and the function is called again after 30 milliseconds.
+The **move_ball** function updates the ball's position based on its velocity. It checks for collisions with the walls and reverses the ball's direction if a collision occurs. If the ball hits the left wall, it resets to the starting position, increases the score, and updates the score display. The ball's new position is updated on the canvas, and the function is called again after 30 milliseconds. If the ball collides with the platform, its direction is reversed, and its speed increases by 30%.
 
 ### Platform Movement Functions
 
